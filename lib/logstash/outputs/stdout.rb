@@ -10,7 +10,7 @@ require "logstash/namespace"
 # For example, the following output configuration, in conjunction with the
 # Logstash `-e` command-line flag, will allow you to see the results
 # of your event pipeline for quick iteration. 
-# 
+# [source,ruby]
 #     output {
 #       stdout {}
 #     }
@@ -20,12 +20,13 @@ require "logstash/namespace"
 # `rubydebug`: outputs event data using the ruby "awesome_print"
 # library[http://rubygems.org/gems/awesome_print]
 #
+# [source,ruby]
 #     output {
 #       stdout { codec => rubydebug }
 #     }
 #
 # `json`: outputs event data in structured JSON format
-#
+# [source,ruby]
 #     output {
 #       stdout { codec => json }
 #     }
