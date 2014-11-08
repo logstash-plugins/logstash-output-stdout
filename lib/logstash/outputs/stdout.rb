@@ -18,7 +18,7 @@ require "logstash/namespace"
 # Useful codecs include:
 #
 # `rubydebug`: outputs event data using the ruby "awesome_print"
-# library[http://rubygems.org/gems/awesome_print]
+# http://rubygems.org/gems/awesome_print[library]
 #
 # [source,ruby]
 #     output {
