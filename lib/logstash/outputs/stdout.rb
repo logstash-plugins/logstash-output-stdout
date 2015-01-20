@@ -38,7 +38,6 @@ class LogStash::Outputs::Stdout < LogStash::Outputs::Base
   end
 
   config_name "stdout"
-  milestone 3
   
   default :codec, "line"
 
