@@ -44,7 +44,7 @@ class LogStash::Outputs::Stdout < LogStash::Outputs::Base
   public
   def register
     @codec.on_event do |event, data|
-      $stdout.write(data)
+      $stdout.puts(data)
     end
   end
 
