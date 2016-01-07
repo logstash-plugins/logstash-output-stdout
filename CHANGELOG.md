@@ -1,3 +1,6 @@
+## 2.0.4
+- Properly declare workers_not_supported
+
 ## 2.0.3
  - removed unused code to fix specs
 

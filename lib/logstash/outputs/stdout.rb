@@ -36,8 +36,14 @@ class LogStash::Outputs::Stdout < LogStash::Outputs::Base
 
   default :codec, "line"
 
+  if self.respond_to?(:workers_not_supported!) # Check for v2.2+ API
+    declare_workers_not_supported!("Stdout only supports one worker to prevent text overlap!")
+  end
+
   public
   def register
+    workers_not_supported # < v2.2 API
+
     @codec.on_event do |event, data|
       $stdout.write(data)
     end
