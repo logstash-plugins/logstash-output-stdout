@@ -45,7 +45,7 @@ class LogStash::Outputs::Stdout < LogStash::Outputs::Base
     workers_not_supported # < v2.2 API
 
     @codec.on_event do |event, data|
-      $stdout.write(data)
+      $stdout.puts(data)
     end
   end
 
