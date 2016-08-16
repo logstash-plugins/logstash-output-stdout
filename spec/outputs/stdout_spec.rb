@@ -13,17 +13,18 @@ describe LogStash::Outputs::Stdout do
     subject { LogStash::Outputs::Stdout.new({}) }
 
     let(:properties) { { "message" => "This is a message!"} }
-    let(:event)      { LogStash::Event.new(properties) }
+    let(:event) { double("event") }
+    let(:encoded) { double("encoded") }
 
     before(:each) do
       subject.register
     end
 
     it "sends the generated event out" do
-      expect(subject.codec).to receive(:encode).with(event)
-      subject.receive(event)
+      expect($stdout).to receive(:write).with(encoded)
+      subject.multi_receive_encoded([[event, encoded]])
     end
-
+    
   end
 
 end

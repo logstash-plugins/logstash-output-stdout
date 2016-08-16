@@ -33,26 +33,16 @@ require "logstash/namespace"
 #
 class LogStash::Outputs::Stdout < LogStash::Outputs::Base
   config_name "stdout"
+  concurrency :single
 
   default :codec, "line"
 
-  if self.respond_to?(:workers_not_supported!) # Check for v2.2+ API
-    declare_workers_not_supported!("Stdout only supports one worker to prevent text overlap!")
-  end
+  def register; end # must be overriden
 
-  public
-  def register
-    workers_not_supported # < v2.2 API
-
-    @codec.on_event do |event, data|
+  def multi_receive_encoded(encoded)
+    encoded.each do |event,data|
       $stdout.write(data)
     end
-  end
-
-  def receive(event)
-
-    return if event == LogStash::SHUTDOWN
-    @codec.encode(event)
   end
 
 end # class LogStash::Outputs::Stdout
