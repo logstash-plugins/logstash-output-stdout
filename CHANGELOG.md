@@ -1,6 +1,7 @@
-## 3.0.2
-  - Relax constraint on logstash-core-plugin-api to >= 1.60 <= 2.99
-
+## 3.1.0
+  - Use new 'concurrency :single' for concurrency
+  - Use pipeline encoded codec for greater parallelism
+  - Require Logstash 2.4+ (Plugin API 1.60.1+)
 ## 3.0.1
   - Republish all the gems under jruby.
 ## 3.0.0
