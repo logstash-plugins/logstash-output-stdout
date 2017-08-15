@@ -1,3 +1,6 @@
+## 3.1.2
+  - Fix some documentation issues
+
 ## 3.1.0
   - Use new 'concurrency :single' for concurrency
   - Use pipeline encoded codec for greater parallelism
