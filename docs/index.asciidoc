@@ -28,6 +28,8 @@ data after it has passed through the inputs and filters.
 For example, the following output configuration, in conjunction with the
 Logstash `-e` command-line flag, will allow you to see the results
 of your event pipeline for quick iteration.
+
+The default codec utilsed within stdout is rubydebug.
 [source,ruby]
     output {
       stdout {}
@@ -35,12 +37,10 @@ of your event pipeline for quick iteration.
 
 Useful codecs include:
 
-`rubydebug`: outputs event data using the ruby "awesome_print"
-http://rubygems.org/gems/awesome_print[library]
-
+`plain`: outputs event data with no delimiting between events.
 [source,ruby]
     output {
-      stdout { codec => rubydebug }
+      stdout { codec => plain }
     }
 
 `json`: outputs event data in structured JSON format

@@ -17,12 +17,10 @@ require "logstash/namespace"
 #
 # Useful codecs include:
 #
-# `rubydebug`: outputs event data using the ruby "awesome_print"
-# http://rubygems.org/gems/awesome_print[library]
-#
+# `plain`: outputs event data with no delimiting between events.
 # [source,ruby]
 #     output {
-#       stdout { codec => rubydebug }
+#       stdout { codec => plain }
 #     }
 #
 # `json`: outputs event data in structured JSON format
@@ -35,7 +33,7 @@ class LogStash::Outputs::Stdout < LogStash::Outputs::Base
   config_name "stdout"
   concurrency :single
 
-  default :codec, "line"
+  default :codec, "rubydebug"
 
   def register; end # must be overriden
 
