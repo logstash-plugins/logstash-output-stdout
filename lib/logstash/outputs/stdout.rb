@@ -35,7 +35,7 @@ class LogStash::Outputs::Stdout < LogStash::Outputs::Base
   config_name "stdout"
   concurrency :single
 
-  default :codec, "line"
+  default :codec, "rubydebug"
 
   def register; end # must be overriden
 

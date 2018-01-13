@@ -37,10 +37,11 @@ Useful codecs include:
 
 `rubydebug`: outputs event data using the ruby "awesome_print"
 http://rubygems.org/gems/awesome_print[library]
+This is the default codec for stdout.
 
 [source,ruby]
     output {
-      stdout { codec => rubydebug }
+      stdout { }
     }
 
 `json`: outputs event data in structured JSON format
