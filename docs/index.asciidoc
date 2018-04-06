@@ -1,5 +1,6 @@
 :plugin: stdout
 :type: output
+:default_codec: rubydebug
 
 ///////////////////////////////////////////
 START - GENERATED VARIABLES, DO NOT EDIT!
@@ -59,3 +60,5 @@ but it does support the <<plugins-{type}s-{plugin}-common-options>>.
 
 [id="plugins-{type}s-{plugin}-common-options"]
 include::{include_path}/{type}.asciidoc[]
+
+:default_codec!:
